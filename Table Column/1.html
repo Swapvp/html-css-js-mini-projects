@@ -1,0 +1,159 @@
+<!-- Section for Category 2 -->
+<div id="product-container-2"></div>
+
+<script type="text/javascript">
+  (function () {
+    var scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+    
+    // Define products for each category section
+    var category2Products = [
+      { id: "9171352715560", elementId: "product-component-5" },
+      { id: "9171345342760", elementId: "product-component-6" },
+      { id: "9171331121448", elementId: "product-component-7" },
+      { id: "9171324240168", elementId: "product-component-8" },
+    ];
+
+    
+    // Function to initialize product container with unique setup for each category
+    function initializeProductContainer(containerId, products) {
+      var container = document.getElementById(containerId);
+
+      // Add containers for products
+      products.forEach((product) => {
+        var div = document.createElement("div");
+        div.id = product.elementId;
+        container.appendChild(div);
+      });
+
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit(containerId, products);
+        } else {
+          loadScript(containerId, products);
+        }
+      } else {
+        loadScript(containerId, products);
+      }
+    }
+
+    function loadScript(containerId, products) {
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = scriptURL;
+      (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(script);
+      script.onload = function() {
+        ShopifyBuyInit(containerId, products);
+        
+      };
+    }
+
+    function ShopifyBuyInit(containerId, products) {
+      var client = ShopifyBuy.buildClient({
+        domain: "bellegirl-lifestyle.myshopify.com",
+        storefrontAccessToken: "1d2b3be8f0cd597a348065b4a6978368",
+      });
+
+      ShopifyBuy.UI.onReady(client).then(function (ui) {
+        products.forEach((product) => {
+          ui.createComponent("product", {
+            id: product.id,
+            node: document.getElementById(product.elementId),
+            moneyFormat: "Rs.%20%7B%7Bamount%7D%7D",
+            options: {
+              product: {
+                styles: {
+                  product: {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0",
+                      "margin-bottom": "20px",
+                    },
+                  },
+                  title: {
+                    "font-family": "PT Sans, sans-serif",
+                    "font-weight": "normal",
+                    color: "#000000",
+                  },
+                  button: {
+                    "font-family": "Oxygen, sans-serif",
+                    "font-weight": "bold",
+                    "font-size": "14px",
+                    "padding-top": "15px",
+                    "padding-bottom": "15px",
+                    ":hover": {
+                      "background-color": "#e69597",
+                    },
+                    "background-color": "#ffa6a8",
+                    ":focus": {
+                      "background-color": "#e69597",
+                    },
+                    "border-radius": "0px",
+                    "padding-left": "24px",
+                    "padding-right": "24px",
+                  },
+                  price: {
+                    "font-family": "PT Sans, sans-serif",
+                    color: "#000000",
+                  },
+                },
+                text: {
+                  button: "Add to cart",
+                },
+              },
+              cart: {
+                styles: {
+                  button: {
+                    "font-family": "Oxygen, sans-serif",
+                    "font-weight": "bold",
+                    "font-size": "14px",
+                    "padding-top": "15px",
+                    "padding-bottom": "15px",
+                    ":hover": {
+                      "background-color": "#e69597",
+                    },
+                    "background-color": "#ffa6a8",
+                    ":focus": {
+                      "background-color": "#e69597",
+                    },
+                    "border-radius": "0px",
+                  },
+                },
+                text: {
+                  title: "Shopping Cart",
+                  button: "Proceed to Buy",
+                },
+              },
+            },
+          });
+        });
+      });
+    }
+
+    // Initialize separate product containers for each category
+   
+    initializeProductContainer("product-container-2", category2Products);
+    
+  })();
+</script>
+
+<style>
+  /* Flexbox styles for the product container */
+  #product-container-1, #product-container-2, #product-container-3, #product-container-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  #product-container-1 > div, #product-container-2 > div, #product-container-3 > div, #product-container-4 > div {
+    flex: 1 1 calc(25% - 20px); /* Four products per row */
+    max-width: calc(25% - 20px);
+  }
+
+  @media (max-width: 768px) {
+    #product-container-1 > div, #product-container-2 > div, #product-container-3 > div, #product-container-4 > div {
+      flex: 1 1 calc(50% - 20px); /* Two products per row on mobile */
+      max-width: calc(50% - 20px);
+    }
+  }
+</style>
