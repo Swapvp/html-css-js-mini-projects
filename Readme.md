@@ -16,6 +16,20 @@ A simple counter application where you can increment, decrement, and reset a cou
   - Reset functionality.
 - Tech Used HTML, CSS, JavaScript.
 
+### 2. String Transform
+
+### 3. Telephone formatter
+
+### 4. ToastSnackbar
+
+### 5. Table Column
+
+### 6. Password Strength
+
+### 8. pixel-art
+
+### 9. color-spotter
+
 ---
 
 ## 📂 Project Structure
