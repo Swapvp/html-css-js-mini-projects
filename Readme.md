@@ -6,29 +6,27 @@ A collection of small projects built with HTML, CSS, and JavaScript to practice 
 
 ## 🚀 Projects Included
 
-### 1. Counter App
+### 1. Guess Number
 
-A simple counter application where you can increment, decrement, and reset a counter value. You can also increment or decrement by a custom value.
+### 2. Counter App
 
-- Features
-  - Real-time counter updates.
-  - Input for custom incrementdecrement values.
-  - Reset functionality.
-- Tech Used HTML, CSS, JavaScript.
+### 3. String Transform
 
-### 2. String Transform
+### 4. Telephone formatter
 
-### 3. Telephone formatter
+### 5. ToastSnackbar
 
-### 4. ToastSnackbar
+### 6. Table Column
 
-### 5. Table Column
+### 7. Password Strength
 
-### 6. Password Strength
+### 8. Star Rating
 
-### 8. pixel-art
+### 9. pixel-art
 
-### 9. color-spotter
+### 10. color-spotter
+
+### 11. Transfer List
 
 ---
 
