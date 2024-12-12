@@ -1,0 +1,43 @@
+.ttt-grid {
+    display: inline-grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
+  }
+  
+  .ttt-grid > button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .row {
+    margin-top: 1rem;
+  }
+  
+  .winner {
+    font-weight: bold;
+  }
+
+  .text-center{
+    text-align: center;
+  }
+
+  #reset{
+    background-color: hsl(271, 76%, 53%);
+    border: none;
+    padding: 10px 30px;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+
+
+  #reset:hover{
+    background-color: hsl(271, 76%, 43%);
+    border: none;
+  }

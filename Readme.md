@@ -28,6 +28,8 @@ A collection of small projects built with HTML, CSS, and JavaScript to practice 
 
 ### 11. Transfer List
 
+### 12 tic-tac-toe
+
 ---
 
 ## 📂 Project Structure
